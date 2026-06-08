@@ -12,6 +12,10 @@ spec:
     metadata:
       labels:
         app: api
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "choco-api"
+        vault.hashicorp.com/agent-inject-secret-config: "choco/data/api"
     spec:
       containers:
         - name: api
