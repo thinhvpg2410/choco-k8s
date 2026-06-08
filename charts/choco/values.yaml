@@ -1,0 +1,36 @@
+global:
+  namespace: choco
+  imageRegistry: "docker.io/thinhvpg2410"
+
+api:
+  image: choco-api
+  tag: latest
+  replicas: 1
+  port: 5000
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "250m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+
+web:
+  image: choco-web
+  tag: latest
+  replicas: 1
+  port: 3000
+
+postgres:
+  image: postgres
+  tag: 16-alpine
+  storage: 2Gi
+
+redis:
+  image: redis
+  tag: 7-alpine
+  storage: 1Gi
+
+ingress:
+  enabled: true
+  className: nginx

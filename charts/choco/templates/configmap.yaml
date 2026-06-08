@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: choco-config
+  namespace: {{ .Values.global.namespace }}
+data:
+  NODE_ENV: "production"
+  PORT: "{{ .Values.api.port }}"
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
+  REDIS_TTL: "3600"
+  REDIS_PREFIX: "choco:"

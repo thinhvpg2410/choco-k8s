@@ -1,0 +1,9 @@
+api:
+  replicas: 2
+  tag: "latest"
+
+web:
+  replicas: 2
+
+# postgres.storage intentionally omitted — Kind does not support PVC resize
+# storage stays at default 2Gi from values.yaml
